@@ -45,28 +45,26 @@ body{font-family:'Inter',system-ui,sans-serif;background:#FFFFFF!important;color
 .topbar {
   position:fixed;top:0;left:0;right:0;z-index:200;
   height:var(--header-h);
-  background:var(--accent);
-  display:flex;align-items:center;gap:12px;
+  background:#111111;
+  display:flex;align-items:center;gap:14px;
   padding:0 20px;
-  box-shadow:0 1px 4px rgba(0,0,0,.18);
+  box-shadow:0 2px 8px rgba(0,0,0,.25);
 }
 .topbar-logo {
-  width:32px;height:32px;
-  background:rgba(255,255,255,.18);
-  border-radius:8px;
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;font-weight:800;font-size:13px;letter-spacing:-.5px;
-  flex-shrink:0;
+  display:flex;align-items:center;flex-shrink:0;
 }
-.topbar-title {font-size:15px;font-weight:700;color:#fff;letter-spacing:-.01em;}
-.topbar-sub {font-size:11px;color:rgba(255,255,255,.72);margin-top:1px;}
+.topbar-logo svg { height:28px;width:auto; }
+.topbar-divider {
+  width:1px;height:22px;background:rgba(255,255,255,.2);flex-shrink:0;
+}
+.topbar-title {font-size:14px;font-weight:700;color:#fff;letter-spacing:.01em;}
+.topbar-sub {font-size:10.5px;color:rgba(255,255,255,.6);margin-top:1px;}
 .topbar-spacer{flex:1;}
 .topbar-badge {
-  background:rgba(255,255,255,.15);
-  border:1px solid rgba(255,255,255,.2);
-  border-radius:20px;
+  background:#00A651;
+  border-radius:4px;
   padding:4px 12px;
-  font-size:11px;color:#fff;font-weight:500;
+  font-size:11px;color:#fff;font-weight:600;letter-spacing:.02em;
 }
 
 /* ── Sidebar ─────────────────────────────────────────── */
@@ -74,8 +72,8 @@ body{font-family:'Inter',system-ui,sans-serif;background:#FFFFFF!important;color
   position:fixed;
   top:var(--header-h);left:0;bottom:0;
   width:var(--sidebar-w);
-  background:var(--surface);
-  border-right:1px solid var(--border);
+  background:#FFFFFF;
+  border-right:1px solid #E0E0E0;
   display:flex;flex-direction:column;
   overflow-y:auto;
   z-index:100;
@@ -185,7 +183,7 @@ select:focus { border-color:var(--accent); }
 
 /* ── KPIs ────────────────────────────────────────────── */
 .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
-.kpi{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;}
+.kpi{background:#fff;border:1px solid #E0E0E0;border-top:3px solid var(--accent);border-radius:4px;padding:14px 16px;}
 .kpi-label{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;}
 .kpi-value{font-size:26px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1;color:var(--text);}
 .kpi-unit{font-size:12px;color:var(--muted);font-weight:400;}
@@ -194,7 +192,7 @@ select:focus { border-color:var(--accent); }
 
 /* ── Charts ──────────────────────────────────────────── */
 .charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-.chart-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;}
+.chart-card{background:#fff;border:1px solid #E0E0E0;border-top:3px solid var(--accent);border-radius:4px;padding:16px;}
 .chart-card.full{grid-column:1/-1;}
 .chart-title{font-size:13px;font-weight:600;margin-bottom:2px;}
 .chart-sub{font-size:11px;color:var(--muted);margin-bottom:12px;}
@@ -265,10 +263,17 @@ td.highlight{font-weight:600;color:var(--accent);}
 
 <!-- Top bar -->
 <header class="topbar">
-  <div class="topbar-logo">GL</div>
+  <div class="topbar-logo">
+    <!-- Logo CREA oficial -->
+    <svg viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg" height="30">
+      <rect width="120" height="40" rx="4" fill="#00A651"/>
+      <text x="60" y="29" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="22" fill="#FFD700" text-anchor="middle" letter-spacing="1">CREA</text>
+    </svg>
+  </div>
+  <div class="topbar-divider"></div>
   <div>
-    <div class="topbar-title">CREA General Lamadrid</div>
-    <div class="topbar-sub">Análisis de gestión · 97/98 – 24/25</div>
+    <div class="topbar-title">General Lamadrid</div>
+    <div class="topbar-sub">Región Sudoeste · 97/98 – 24/25</div>
   </div>
   <div class="topbar-spacer"></div>
   <div class="topbar-badge">28 campañas</div>
